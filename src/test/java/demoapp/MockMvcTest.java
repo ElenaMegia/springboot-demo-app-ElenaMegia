@@ -33,8 +33,8 @@ public class MockMvcTest {
     @Test
     public void postShoudReturnCorrectResponse() throws Exception {
         this.mockMvc.perform(post("/saludoform")
-                .param("nombre", "Domingo"))
+                .param("nombre", "Elena"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Hola Domingo")));
+                .andExpect(content().string(containsString("Hola Elena")));
     }
 }

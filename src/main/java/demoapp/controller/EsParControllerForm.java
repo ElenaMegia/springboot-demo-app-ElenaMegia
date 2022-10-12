@@ -27,7 +27,7 @@ public class EsParControllerForm {
         if (bindingResult.hasErrors()) {
             return Boolean.parseBoolean("formRegistroNumero");
         }
-        model.addAttribute(service.esPar(numeroData.getNumero()))
+        model.addAttribute(service.esPar(numeroData.getNumero()));
         return Boolean.parseBoolean("esPar");
         }
 }
