@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Comprueba el número</title>
 </head>
 <body>
+    <h1> Comprueba el número</h1> <br>
+    <!-- En method no poner th: -->
+    <from th:action="@{/esPar}" th:object="${numeroData}" method="post">
+
+        <h2>Introduce el número: </h2>
+        <input type="text" th:field="*{numero}" />
+        <p th:if="${#fields.hasErrors('numero')}" th:errors="*{numero}">
+            <button type="submit"> Clic aquí para comprobar </button></p>
+    </from>
+
 
 </body>
 </html>
