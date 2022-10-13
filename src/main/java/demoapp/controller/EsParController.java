@@ -20,18 +20,19 @@ public class EsParController {
     //Se declara con NumeroData
     @GetMapping("/esPar")
     public String saludoForm(NumeroData numeroData){
-        return "formGetNumero";
+
+        return "formRegistroNumero";
     }
 
     @PostMapping("/esPar")
     public String esPar(@ModelAttribute @Valid NumeroData numero, BindingResult bindingResult, Model model){
        String respuesta;
         if(bindingResult.hasErrors()){
-            respuesta= "formGetNumero";
+            respuesta= "formRegistroNumero";
         } else{
             model.addAttribute("numero, numero.getNumero()");
             model.addAttribute("esPar", service.esPar(numero.getNumero()));
-            respuesta="esParComprobado";
+            respuesta="esParComprobar";
         }
         return respuesta;
     }
