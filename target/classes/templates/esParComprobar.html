@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Resultado del número</title>
+</head>
+<body>
+    <h1>El número es:</h1>
+    <h1  th:style="${esPar} ? 'color: green;' : 'color: red'" th:text="${numero}"/>
+</body>
+</html>
