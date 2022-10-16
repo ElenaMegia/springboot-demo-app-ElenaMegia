@@ -14,7 +14,7 @@ public class NumeroParServiceTest {
 
     @Test
     public void ComprobarNumero() throws Exception{
-        assertThat(numeroParService.esPar(-34)).isTrue();
+        assertThat(numeroParService.esPar(10)).isTrue();
         assertThat(numeroParService.esPar(55)).isFalse();
     }
 

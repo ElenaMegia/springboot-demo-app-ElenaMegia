@@ -9,7 +9,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.containsString;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -25,17 +24,18 @@ public class EsParControllerTest {
     @Test
     public void shouldReturnPar() throws Exception{
         this.mockMvc.perform(post("/esPar")
-            .param("numero", "62"))
+            .param("numero", "10"))
             .andExpect(status().isOk())
-            .andExpect(content().string(allOf(containsString("62"))));
+            .andExpect(content().string(allOf(containsString("10"),containsString("green"))));
 
     }
 
+    @Test
     public void shouldReturnImPar() throws Exception{
         this.mockMvc.perform(post("/esPar")
-                .param("numero", "13"))
+                .param("numero", "55"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(allOf(containsString("13"))));
+                .andExpect(content().string(allOf(containsString("55"),containsString("red"))));
 
     }
 }
